@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+      <div class="container">
+        <a href="../" class="navbar-brand"> Brigadier General</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Subreddits<span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+                <% Subreddit.all.each do |subreddit| %>
+                  <%= link_to "/r/#{subreddit.name}", subreddit_path(subreddit), class: "dropdown-item" %>
+                <% end %>
+
+              </div>
+            </li>
+
+
+        </div>
+      </div>
+    </div>

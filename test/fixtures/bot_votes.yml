@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bot_user: one
+  post: one
+
+two:
+  bot_user: two
+  post: two

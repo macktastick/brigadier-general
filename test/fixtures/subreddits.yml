@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  notify: MyString
+  coarse_filter_enabled: false
+  coarse_filter_period: 1
+  coarse_filter_vote_threshold: 1
+  coarse_filter_comment_threshold: 1
+  medium_filter_enabled: false
+  medium_filter_period: 1
+  medium_filter_vote_threshold: 1
+  medium_filter_comment_threshold: 1
+  fine_filter_enabled: false
+  fine_filter_period: 1
+  fine_filter_vote_threshold: 1
+  fine_filter_comment_threshold: 1
+
+two:
+  name: MyString
+  notify: MyString
+  coarse_filter_enabled: false
+  coarse_filter_period: 1
+  coarse_filter_vote_threshold: 1
+  coarse_filter_comment_threshold: 1
+  medium_filter_enabled: false
+  medium_filter_period: 1
+  medium_filter_vote_threshold: 1
+  medium_filter_comment_threshold: 1
+  fine_filter_enabled: false
+  fine_filter_period: 1
+  fine_filter_vote_threshold: 1
+  fine_filter_comment_threshold: 1

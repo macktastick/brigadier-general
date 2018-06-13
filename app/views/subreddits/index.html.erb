@@ -1,0 +1,42 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="page-header" id="banner">
+    <div class="row">
+      <div class="col-lg-8 col-md-7 col-sm-6">
+        <h1>Subreddits</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Notify</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @subreddits.each do |subreddit| %>
+       <tr class="<%= cycle('default', 'secondary') -%>">
+         <td><%= subreddit.name %></td>
+         <td><%= subreddit.notify %></td>
+         <td><%= link_to 'Show', subreddit %></td>
+       </tr>
+       <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <div class="apple_pagination">
+          <%= will_paginate @subreddits %>
+        </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</div>
