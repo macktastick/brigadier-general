@@ -39,10 +39,10 @@ task :scan_for_links_to_rcc =>  :environment do |t,args|
           ap "source: #{source.to_s}"
 
           if post = Post.find_by_reddit_id(reddit_id.to_s)
-
+            ap "post found!"
             unless existing_link = Link.find_by_post_id_and_origin(post.id, source.to_s)
-
-              Link.create(
+              ap "knows there isn't link"
+              Link.create!(
                 post_id: post.id,
                 origin: source.to_s
               )

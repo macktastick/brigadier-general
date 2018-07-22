@@ -115,6 +115,9 @@ task :scan =>  :environment do |t,args|
             end
           end
 
+          post.exceded_vm_threshold = true
+          post.save
+
           alert_text += "\n\n\n\nLink to post: #{post.url}"
 
           alert_text += "\n\n\n\n_This message will only be sent once for this post even though it may violate other filters in the future._"
@@ -134,7 +137,6 @@ task :scan =>  :environment do |t,args|
                 subreddit_to_notify.submit(subject, text: alert_text)
               end
               post.notified = true
-              post.exceded_vm_threshold = true
               post.save
             end
 
