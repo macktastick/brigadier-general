@@ -23,9 +23,9 @@ task :scan_for_links_to_rcc =>  :environment do |t,args|
     # if i == 1
 
       selftext_html = rpost.selftext_html
-      if destination_a = selftext_html.match(/(?<=Destination:)\s*<a.*<\/a>/)
+      if selftext_html and destination_a = selftext_html.match(/(?<=Destination:)\s*<a.*<\/a>/)
 
-        if reddit_id = destination_a.to_s.match(/(?<=comments\/)\w+(?=\/)/)
+        if destination_a and reddit_id = destination_a.to_s.match(/(?<=comments\/)\w+(?=\/)/)
 
           ap reddit_id.to_s
 
