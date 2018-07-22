@@ -3,7 +3,7 @@ require 'redd'
 # bundle exec rake scan_for_links_to_rcc --trace
 task :scan_for_links_to_rcc =>  :environment do |t,args|
 
-  Link.delete_all
+  # Link.delete_all
 
   target_name = "CryptoCurrencyTesting"
 

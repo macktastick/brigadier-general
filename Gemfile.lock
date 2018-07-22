@@ -249,7 +249,7 @@ DEPENDENCIES
   awesome_print
   bootstrap (~> 4.0.0)
   byebug
-  capistrano (~> 3.7, >= 3.7.1)
+  capistrano
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.2)
   capistrano-rbenv (~> 2.1)

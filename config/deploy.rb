@@ -1,10 +1,10 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.1"
+lock "~> 3.11"
 
 set :application, "brigadier-general"
 set :repo_url, "git@github.com:macktastick/brigadier-general.git"
 
-ssh_options[:keys] = %w(/Users/victor.pudeyev/ec2/MBP-2.pem)
+# ssh_options[:keys] = %w(/Users/victor.pudeyev/ec2/MBP-2.pem)
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
