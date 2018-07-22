@@ -46,6 +46,10 @@ task :scan_for_links_to_rcc =>  :environment do |t,args|
                 post_id: post.id,
                 origin: source.to_s
               )
+
+              post.linked = true
+              post.save
+
             end
           end
 

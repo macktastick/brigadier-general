@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319020341) do
+ActiveRecord::Schema.define(version: 20180722035106) do
 
-  create_table "alerts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "alerts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.integer "post_id"
     t.integer "observation_id"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180319020341) do
     t.string "threshold_type"
   end
 
-  create_table "bot_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "bot_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email"
     t.string "username"
     t.string "password"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20180319020341) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bot_votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "bot_votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.bigint "bot_user_id"
     t.bigint "post_id"
     t.datetime "created_at", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180319020341) do
     t.index ["post_id"], name: "index_bot_votes_on_post_id"
   end
 
-  create_table "links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.bigint "post_id"
     t.string "origin"
     t.datetime "created_at", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180319020341) do
     t.index ["post_id"], name: "index_links_on_post_id"
   end
 
-  create_table "observations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "observations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.integer "post_id"
     t.integer "up_votes"
     t.integer "down_votes"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20180319020341) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "reddit_id"
     t.string "title", limit: 512
     t.string "permalink"
@@ -65,10 +65,12 @@ ActiveRecord::Schema.define(version: 20180319020341) do
     t.datetime "updated_at", null: false
     t.string "url"
     t.string "status"
+    t.boolean "exceded_vm_threshold"
+    t.boolean "linked"
     t.index ["subreddit_id"], name: "index_posts_on_subreddit_id"
   end
 
-  create_table "subreddits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "subreddits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "name"
     t.string "notify"
     t.integer "post_monitoring_period"

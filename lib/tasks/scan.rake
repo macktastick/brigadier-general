@@ -134,6 +134,7 @@ task :scan =>  :environment do |t,args|
                 subreddit_to_notify.submit(subject, text: alert_text)
               end
               post.notified = true
+              post.exceded_vm_threshold = true
               post.save
             end
 

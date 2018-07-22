@@ -11,6 +11,8 @@ class PostDatatable < AjaxDatatablesRails::Base
       reddit_id: { source: "Post.reddit_id", cond: :like, searchable: true, orderable: true },
       title:  { source: "Post.title",  cond: :like, searchable: true, orderable: true },
       notified:  { source: "Post.notified",  cond: :eq, searchable: false, orderable: true },
+      exceded_vm_threshold:  { source: "Post.exceded_vm_threshold",  cond: :eq, searchable: false, orderable: true },
+      linked:  { source: "Post.linked",  cond: :eq, searchable: false, orderable: true },
       created_at:  { source: "Post.created_at",  searchable: false, orderable: true }
     }
   end
@@ -21,6 +23,8 @@ class PostDatatable < AjaxDatatablesRails::Base
         reddit_id: record.reddit_id,
         title: link_to(record.title, post_path(record)),
         notified: record.notified,
+        exceded_vm_threshold: record.exceded_vm_threshold,
+        linked: record.linked,
         created_at: record.created_at
 
       }
