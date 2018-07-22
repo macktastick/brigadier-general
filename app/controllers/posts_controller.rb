@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
 
 
-  # TODO I don't think this is working anymore... 6/12/2018
+
   def show_from_reddit_id
     @post = Post.find_by_reddit_id(params[:reddit_id])
 

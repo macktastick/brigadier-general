@@ -28,3 +28,7 @@ job_type :rbenv_rake, %Q{export PATH=/home/deploy/.rbenv/shims:/home/deploy/.rbe
 every 1.minutes do # 1.minute 1.day 1.week 1.month 1.year is also supported
   rbenv_rake "scan"
 end
+
+every 3.minutes do # 1.minute 1.day 1.week 1.month 1.year is also supported
+  rbenv_rake "scan_for_links_to_rcc"
+end
